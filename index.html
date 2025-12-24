@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Our 2025 💙</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Landing Screen -->
+  <div id="landing" class="screen">
+    <h1>Hey Love 💙</h1>
+    <p>This year is special because of you</p>
+    <button onclick="startSite()">Open Our Calendar</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main" class="hidden">
+    <h2 id="yearTitle"></h2>
+    <div id="calendar"></div>
+    <div id="specialMessage" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
