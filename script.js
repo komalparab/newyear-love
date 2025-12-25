@@ -1,16 +1,16 @@
 const calendarData2025 = [
-  { month: "January", message: "A new year, a new chapter — and you’re my favorite part.", highlight: "Our year begins together 💙" },
-  { month: "February", message: "Love feels softer and stronger with you.", highlight: "Month of us ❤️" },
-  { month: "March", message: "With you, even ordinary days feel special.", highlight: "Growing closer every day" },
-  { month: "April", message: "Your presence makes everything brighter.", highlight: "Smiles, warmth, and memories" },
-  { month: "May", message: "Grateful for you, always.", highlight: "Holding hands through life" },
-  { month: "June", message: "Halfway through the year, fully in love.", highlight: "You are my constant" },
-  { month: "July", message: "Monsoon days feel warmer with you.", highlight: "Comfort and calm" },
-  { month: "August", message: "Every moment with you is worth remembering.", highlight: "Laughs and late talks" },
-  { month: "September", message: "You make my heart feel at home.", highlight: "Peace with you" },
-  { month: "October", message: "Falling deeper, just like the season.", highlight: "Endless affection" },
-  { month: "November", message: "Thankful for your love and patience.", highlight: "Grateful heart 🤍" },
-  { month: "December", message: "A year well lived — because of you.", highlight: "Ending 2025 with love" }
+  { month: "January", message: "A new year, a new chapter — and you’re my favorite part." },
+  { month: "February", message: "Love feels softer and stronger with you." },
+  { month: "March", message: "With you, even ordinary days feel special." },
+  { month: "April", message: "Your presence makes everything brighter." },
+  { month: "May", message: "Grateful for you, always." },
+  { month: "June", message: "Halfway through the year, fully in love." },
+  { month: "July", message: "Monsoon days feel warmer with you." },
+  { month: "August", message: "Every moment with you is worth remembering." },
+  { month: "September", message: "You make my heart feel at home." },
+  { month: "October", message: "Falling deeper, just like the season." },
+  { month: "November", message: "Thankful for your love and patience." },
+  { month: "December", message: "Ending the year with love and gratitude." }
 ];
 
 function startSite() {
@@ -30,13 +30,11 @@ function renderCalendar() {
 
   if (now >= new Date("2026-01-01T00:00:00")) {
     yearTitle.innerText = "🎆 1st January 2026 🎆";
-
     specialMessage.innerHTML = `
       Happy New Year 🎆<br>
       New beginnings of our life together ❤️
     `;
     specialMessage.classList.remove("hidden");
-
     startFireworks();
     return;
   }
@@ -44,32 +42,47 @@ function renderCalendar() {
   yearTitle.innerText = "Our 2025 Together 💙";
 
   calendarData2025.forEach(item => {
-    const monthCard = document.createElement("div");
-    monthCard.className = "month";
+    const card = document.createElement("div");
+    card.className = "flip-card";
 
-    monthCard.innerHTML = `
-      <h3>${item.month}</h3>
-      <div class="popup">
-        <p>${item.message}</p>
-        <span>${item.highlight}</span>
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>${item.month}</h3>
+        </div>
+        <div class="flip-back">
+          <p>${item.message}</p>
+        </div>
       </div>
     `;
 
-    monthCard.addEventListener("click", e => {
-      e.stopPropagation();
-      closeAllPopups();
-      monthCard.classList.toggle("active");
+    // Mobile tap support
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
     });
 
-    calendar.appendChild(monthCard);
+    calendar.appendChild(card);
   });
-
-  document.body.addEventListener("click", closeAllPopups);
 }
 
-function closeAllPopups() {
-  document.querySelectorAll(".month.active").forEach(m => m.classList.remove("active"));
-}
+const heartToggle = document.getElementById("heartToggle");
+const calendarView = document.getElementById("calendar");
+const secondSite = document.getElementById("secondSite");
+
+let showingCalendar = true;
+
+heartToggle.addEventListener("click", () => {
+  showingCalendar = !showingCalendar;
+
+  if (showingCalendar) {
+    calendarView.classList.remove("hidden");
+    secondSite.classList.add("hidden");
+  } else {
+    calendarView.classList.add("hidden");
+    secondSite.classList.remove("hidden");
+  }
+});
+
 
 /* ================= FIREWORKS ================= */
 
@@ -91,7 +104,7 @@ function startFireworks() {
       particles.push({
         x,
         y,
-        angle: Math.random() * 2 * Math.PI,
+        angle: Math.random() * Math.PI * 2,
         speed: Math.random() * 4 + 2,
         alpha: 1
       });
@@ -108,7 +121,7 @@ function startFireworks() {
         p.y += Math.sin(p.angle) * p.speed;
         p.alpha -= 0.02;
 
-        ctx.fillStyle = `rgba(255, 100, 150, ${p.alpha})`;
+        ctx.fillStyle = `rgba(255, 80, 150, ${p.alpha})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
         ctx.fill();
