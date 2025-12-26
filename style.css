@@ -5,25 +5,8 @@ body {
   text-align: center;
 }
 
-.screen {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  background: #4d88ff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
+#yearTitle {
+  margin-top: 20px;
 }
 
 #calendar {
@@ -33,48 +16,10 @@ button {
   padding: 20px;
 }
 
-/* ================= HEART TOGGLE ================= */
-
-#heartToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 52px;
-  height: 52px;
-  background: #ff4d6d;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.2s ease;
-}
-
-#heartToggle:active {
-  transform: scale(0.9);
-}
-
-/* ================= SECOND SITE ================= */
-
-#secondSite {
-  padding: 40px 20px;
-}
-
-.loveText {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
-
-
-/* ================= FLIP CARDS ================= */
+/* ===== FLIP CARD ===== */
 
 .flip-card {
   perspective: 1000px;
-  cursor: pointer;
 }
 
 .flip-inner {
@@ -84,12 +29,6 @@ button {
   transition: transform 0.6s ease;
 }
 
-/* Desktop hover */
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}
-
-/* Mobile tap */
 .flip-card.flipped .flip-inner {
   transform: rotateY(180deg);
 }
@@ -105,14 +44,14 @@ button {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .flip-front {
   background: white;
-  color: #4d4dff;
   font-size: 20px;
   font-weight: 600;
+  color: #4d4dff;
 }
 
 .flip-back {
@@ -122,29 +61,7 @@ button {
   color: #333;
 }
 
-/* ================= FINAL MESSAGE ================= */
-
-#specialMessage {
-  font-size: 26px;
-  font-weight: 600;
-  color: #ff2e63;
-  margin-top: 40px;
-  line-height: 1.4;
-}
-
-/* ================= FIREWORKS ================= */
-
-#fireworksCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* ================= MOBILE ================= */
+/* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
   #calendar {
