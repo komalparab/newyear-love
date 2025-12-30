@@ -1,22 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Our Year Together</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Our Year Together</title>
+<style>
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+        color: #fff;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .card {
+        perspective: 1000px;
+        cursor: pointer;
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .card.flip .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        backface-visibility: hidden;
+    }
+
+    .card-front {
+        background: #ffffff;
+        color: #111;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .card-back {
+        background: #ff6f91;
+        color: #fff;
+        transform: rotateY(180deg);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+</style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+<h1>Our Year Together ❤️</h1>
 
-  <h2 id="yearTitle">Our 2025 Together 💙</h2>
+<div class="grid">
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">January</div>
+            <div class="card-back">The month I finally discovered my real world—my existence felt complete beside you.</div>
+        </div>
+    </div>
 
-  <div id="calendar"></div>
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">February</div>
+            <div class="card-back">My first-ever Valentine’s Day with the love of my life, a memory I will cherish forever.</div>
+        </div>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">March</div>
+            <div class="card-back">Chaotic, fun, and full of stolen moments—hiding our love while growing stronger together.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">April</div>
+            <div class="card-back">Facing storms and fights, choosing each other, and standing together no matter what.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">May</div>
+            <div class="card-back">Learning, growing, and understanding each other a little more every day.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">June</div>
+            <div class="card-back">Cheering for each other through everything, staying loyal, loving, and strong.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">July</div>
+            <div class="card-back">Soft sunsets and rainy days felt warmer and more beautiful with you.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">August</div>
+            <div class="card-back">Festive days, shared prayers, and hopes for a better future together.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">September</div>
+            <div class="card-back">Feeling blessed every day to have you around me.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">October</div>
+            <div class="card-back">Our love accepted, surrounded by happiness and family blessings.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">November</div>
+            <div class="card-back">Your birthday month—celebrating you and the official us.</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flip')">
+        <div class="card-inner">
+            <div class="card-front">December</div>
+            <div class="card-back">Finding peace in knowing you are mine and I am yours forever ❤️</div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
