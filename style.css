@@ -8,14 +8,13 @@ body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 
-  /* Light blue background */
+  /* Sky blue (slightly darker, pleasant) */
   background: linear-gradient(
     180deg,
-    #eaf4ff 0%,
-    #d6ebff 50%,
-    #c2e0ff 100%
+    #cfe9ff 0%,
+    #b7ddff 50%,
+    #9fceff 100%
   );
-
   color: #0a2540;
 }
 
