@@ -84,35 +84,41 @@ h1 {
 /* Back */
 .flip-back {
 
-  /* Fireworks container */
+/* Fireworks container */
 #fireworks {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 5; /* ABOVE background, BELOW cards */
 }
 
+/* Individual firework */
 .firework {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  animation: explode 1.2s ease-out forwards;
+  animation: firework 1.5s ease-out forwards;
 }
 
-@keyframes explode {
+@keyframes firework {
   0% {
-    transform: scale(0.3);
+    transform: scale(1);
     opacity: 1;
   }
   100% {
-    transform: scale(8);
+    transform: scale(18);
     opacity: 0;
   }
 }
 
-  font-size: 14px;
-  line-height: 1.6;
+/* Keep cards above fireworks */
+.flip-card {
+  position: relative;
+  z-index: 10;
+}
+
   transform: rotateY(180deg);
 }
+
 
