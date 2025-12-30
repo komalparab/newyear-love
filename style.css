@@ -1,15 +1,14 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
+    padding: 30px 20px;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #0b3c5d, #1c5d99);
+    background: linear-gradient(180deg, #0b4fa3, #0a2e5c);
     color: #ffffff;
-    padding: 30px 20px;
 }
 
 h1 {
@@ -17,7 +16,6 @@ h1 {
     margin-bottom: 40px;
     font-size: 28px;
     font-weight: 500;
-    letter-spacing: 0.5px;
 }
 
 .grid {
@@ -29,8 +27,8 @@ h1 {
 }
 
 .card {
-    perspective: 1000px;
     height: 220px;
+    perspective: 1000px;
     cursor: pointer;
 }
 
@@ -55,27 +53,21 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 18px;
+    text-align: center;
     backface-visibility: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
 .card-front {
-    background: #0a2540;
-    color: #ffffff;
+    background: #0a1f44; /* dark blue */
     font-size: 20px;
     font-weight: 600;
 }
 
 .card-back {
-    background: #133e6f;
-    color: #e6f0ff;
+    background: #133b7a; /* slightly lighter dark blue */
     font-size: 14px;
     line-height: 1.6;
     transform: rotateY(180deg);
-}
-
-.card:hover .card-front {
-    box-shadow: 0 12px 30px rgba(0, 140, 255, 0.35);
 }
