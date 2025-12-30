@@ -72,9 +72,28 @@ calendarData.forEach((item, index) => {
 
     // 🎆 Fireworks ONLY for December
     if (item.month === "December") {
-      launchFireworks();
+     function launchFireworks() {
+  for (let i = 0; i < 40; i++) {
+    const fw = document.createElement("div");
+    fw.className = "firework";
+
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+
+    fw.style.left = x + "px";
+    fw.style.top = y + "px";
+
+    fw.style.background = `hsl(${Math.random() * 360}, 90%, 60%)`;
+
+    fireworksContainer.appendChild(fw);
+
+    setTimeout(() => fw.remove(), 1500);
+  }
+}
     }
   });
 
   calendar.appendChild(card);
 });
+
+
