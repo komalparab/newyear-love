@@ -27,8 +27,8 @@ calendarData.forEach((item, index) => {
   const card = document.createElement("div");
   card.className = "flip-card";
 
-  /* Progressive blue shades */
-  const lightness = 85 - index * 4; // Jan → light, Dec → dark
+  /* Progressive blue shades (Jan → light, Dec → dark) */
+  const lightness = 85 - index * 4;
   const blueShade = `hsl(210, 70%, ${lightness}%)`;
   card.style.setProperty("--card-blue", blueShade);
 
