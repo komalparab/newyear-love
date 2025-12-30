@@ -88,3 +88,10 @@ h1 {
     line-height: 1.6;
     transform: rotateY(180deg);
 }
+
+.flip-front,
+.flip-back {
+  background: var(--card-blue);
+}
+
+
