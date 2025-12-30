@@ -58,17 +58,20 @@ calendarData.forEach((item, index) => {
   `;
 
   card.addEventListener("click", () => {
-    if (!musicStarted && bgMusic) {
-      bgMusic.play().catch(() => {});
-      musicStarted = true;
-    }
+  startMusic();
 
-    if (activeCard && activeCard !== card) {
-      activeCard.classList.remove("flipped");
-    }
+  if (activeCard && activeCard !== card) {
+    activeCard.classList.remove("flipped");
+  }
 
-    card.classList.toggle("flipped");
-    activeCard = card.classList.contains("flipped") ? card : null;
+  card.classList.toggle("flipped");
+  activeCard = card.classList.contains("flipped") ? card : null;
+
+  if (item.month === "December") {
+    launchFireworks();
+  }
+});
+
 
     // 🎆 Fireworks ONLY for December
     if (item.month === "December") {
@@ -95,5 +98,6 @@ calendarData.forEach((item, index) => {
 
   calendar.appendChild(card);
 });
+
 
 
