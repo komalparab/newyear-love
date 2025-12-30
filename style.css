@@ -1,39 +1,44 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 20px;
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    background: linear-gradient(180deg, #0b3c5d, #1c5d99);
     color: #ffffff;
+    padding: 30px 20px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 28px;
     font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
     margin: auto;
 }
 
 .card {
     perspective: 1000px;
+    height: 220px;
     cursor: pointer;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
-    height: 200px;
-    transition: transform 0.8s ease;
+    height: 100%;
+    transition: transform 0.7s ease;
     transform-style: preserve-3d;
 }
 
@@ -46,39 +51,31 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 14px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
     text-align: center;
+    padding: 18px;
     backface-visibility: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .card-front {
-    background: #ffffff;
-    color: #111;
-    font-size: 22px;
+    background: #0a2540;
+    color: #ffffff;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .card-back {
-    background: #ff6f91;
-    color: #ffffff;
+    background: #133e6f;
+    color: #e6f0ff;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     transform: rotateY(180deg);
 }
-.card {
-    perspective: 1000px;
-    cursor: pointer;
-    height: 200px;
-}
 
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease;
-    transform-style: preserve-3d;
+.card:hover .card-front {
+    box-shadow: 0 12px 30px rgba(0, 140, 255, 0.35);
 }
