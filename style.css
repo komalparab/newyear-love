@@ -1,70 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #cce7ff, #fbeaff);
-  text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    color: #ffffff;
 }
 
-#yearTitle {
-  margin-top: 20px;
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
 }
 
-#calendar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-/* ===== FLIP CARD ===== */
-
-.flip-card {
-  perspective: 1000px;
+.card {
+    perspective: 1000px;
+    cursor: pointer;
 }
 
-.flip-inner {
-  position: relative;
-  height: 160px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
 }
 
-.flip-card.flipped .flip-inner {
-  transform: rotateY(180deg);
+.card.flip .card-inner {
+    transform: rotateY(180deg);
 }
 
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    backface-visibility: hidden;
 }
 
-.flip-front {
-  background: white;
-  font-size: 20px;
-  font-weight: 600;
-  color: #4d4dff;
+.card-front {
+    background: #ffffff;
+    color: #111;
+    font-size: 22px;
+    font-weight: 600;
 }
 
-.flip-back {
-  background: #fff0f5;
-  transform: rotateY(180deg);
-  font-size: 14px;
-  color: #333;
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 768px) {
-  #calendar {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.card-back {
+    background: #ff6f91;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    transform: rotateY(180deg);
 }
