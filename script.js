@@ -19,18 +19,36 @@ const calendarData = [
 
 const calendar = document.getElementById("calendar");
 const bgMusic = document.getElementById("bgMusic");
+const fireworksContainer = document.getElementById("fireworks");
 
 let activeCard = null;
 let musicStarted = false;
+
+function launchFireworks() {
+  for (let i = 0; i < 25; i++) {
+    const fw = document.createElement("div");
+    fw.className = "firework";
+
+    fw.style.left = Math.random() * 100 + "vw";
+    fw.style.top = Math.random() * 100 + "vh";
+    fw.style.background =
+      `hsl(${Math.random() * 360}, 80%, 60%)`;
+
+    fireworksContainer.appendChild(fw);
+
+    setTimeout(() => fw.remove(), 1200);
+  }
+}
 
 calendarData.forEach((item, index) => {
   const card = document.createElement("div");
   card.className = "flip-card";
 
-  /* Progressive blue shades (Jan → light, Dec → dark) */
   const lightness = 85 - index * 4;
-  const blueShade = `hsl(210, 70%, ${lightness}%)`;
-  card.style.setProperty("--card-blue", blueShade);
+  card.style.setProperty(
+    "--card-blue",
+    `hsl(210, 70%, ${lightness}%)`
+  );
 
   card.innerHTML = `
     <div class="flip-inner">
@@ -51,6 +69,11 @@ calendarData.forEach((item, index) => {
 
     card.classList.toggle("flipped");
     activeCard = card.classList.contains("flipped") ? card : null;
+
+    // 🎆 Fireworks ONLY for December
+    if (item.month === "December") {
+      launchFireworks();
+    }
   });
 
   calendar.appendChild(card);
